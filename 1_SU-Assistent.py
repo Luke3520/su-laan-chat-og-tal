@@ -4,12 +4,11 @@ from langchain_chroma import Chroma
 from langchain_core.messages import HumanMessage, AIMessage, SystemMessage
 from dotenv import load_dotenv
 
-# Load environment variables (e.g. OPENAI_API_KEY)
 load_dotenv()
 
 # --- Configuration ---
-CHROMA_PATH = "chroma_db"  # folder where your Chroma vector DB is stored
-DATA_PATH = "data"          # only used during ingestion, not by the chatbot itself
+CHROMA_PATH = "chroma_db"  
+DATA_PATH = "data"          
 
 # --- Load & cache heavy resources ---
 @st.cache_resource(show_spinner="Booting models & vector store …")
@@ -28,11 +27,11 @@ def load_resources():
 
 llm, retriever = load_resources()
 
-# --- Streamlit UI ---
+
 st.title("🤖 SU-Assistent")
 st.caption("Stil spørgsmål – få svar hurtigere end på skat.dk!")
 
-# Info‑boksen om brug
+
 with st.expander("Hvad kan jeg bruge denne side til?", expanded=False):
     st.markdown(
             """

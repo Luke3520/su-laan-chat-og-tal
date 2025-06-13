@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import math
-st.set_page_config(page_title="SU-Lånberegner", page_icon="📊") # Added page_config for consistency
+st.set_page_config(page_title="SU-Lånberegner", page_icon="📊") 
 st.title("📊 SU-Lånberegner")
 
 st.write("### Indtast data")
@@ -112,7 +112,6 @@ else: # loan_amount > 0 and loan_term > 0
             if principal_this_month < 0 and i != num_payments_int : principal_this_month = 0 # Avoid negative principal
             if principal_this_month > remaining_balance + 0.01 and i != num_payments_int: # Cap if overshooting
                 principal_this_month = remaining_balance
-                # payment_this_month might need adjustment if principal is capped, but usually last payment handles this.
 
             remaining_balance -= principal_this_month
             if abs(remaining_balance) < 0.01: # Threshold for float precision, effectively zero

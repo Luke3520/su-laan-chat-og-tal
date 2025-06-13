@@ -4,7 +4,6 @@ from langchain_openai.embeddings import OpenAIEmbeddings
 from langchain_chroma import Chroma
 from uuid import uuid4
 
-# import the .env file
 from dotenv import load_dotenv
 load_dotenv()
 
